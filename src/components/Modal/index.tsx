@@ -5,9 +5,16 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-export const Modal = ({children, title, open, handleClose}: any) => {
+type ModalTypes = {
+    title: string,
+    children: React.ReactNode,
+    open: boolean,
+    handleClose: Function,
+}
+
+export const ModalC = ({children, title, open, handleClose}: ModalTypes) => {
     
-    const onClose = () => {
+    const onClose = () : void => {
         handleClose();
     }
     return (

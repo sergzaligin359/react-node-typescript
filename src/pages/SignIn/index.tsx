@@ -1,6 +1,6 @@
 import React from 'react';
 import { SignIn } from './components';
 
-export function SignInPage() {
+export const SignInPage: React.FC = (): React.ReactElement => {
     return <SignIn />;
 }

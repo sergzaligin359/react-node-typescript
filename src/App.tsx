@@ -1,10 +1,16 @@
 import React from 'react';
-import {SignInPage} from './pages';
+import { Switch, Route } from 'react-router-dom';
+import {SignInPage, HomePage} from './pages';
+
+
 
 function App() {
   return (
     <div className="App">
-      <SignInPage />
+      <Switch>
+        <Route path="/signin" component={ SignInPage } />
+        <Route path="/" component={ HomePage } exact />
+      </Switch>
     </div>
   );
 }

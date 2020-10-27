@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import { Typography } from '@material-ui/core';
 
 
-import { Modal } from '../../../../../../components/Modal'
+import { ModalC } from '../../../../../../components/Modal'
 
 import { useStyles } from '../../../../styles';
 import { Sign } from './Sign';
@@ -17,17 +17,17 @@ export const AuthLink = () => {
     const [ open, setOpen ] = useState(false);
     const [ mode, setMode ] = useState('');
 
-    const handleClickOpen = (mode: any) => {
+    const handleClickOpen = (mode: string) : void => {
       setMode(mode);
       setOpen(true);
     };
   
-    const handleClose = () => {
+    const handleClose = () : void => {
       setMode('');
       setOpen(false);
     };
 
-    const title = mode === 'sign' ? 'Вход в твиттер' : 'Создайте учетную запись';
+    const title: string = mode === 'sign' ? 'Вход в твиттер' : 'Создайте учетную запись';
 
     return (
         <div className={ rightBlock }>
@@ -38,14 +38,14 @@ export const AuthLink = () => {
                 <Button variant="contained" color="primary" onClick={ () => handleClickOpen('register') }>Зарегистрироваться</Button>
                 <Button variant="outlined" color="primary" onClick={ () => handleClickOpen('sign') }>Войти</Button>
             </section>
-            <Modal 
+            <ModalC 
                 open={ open } 
                 handleClose={ handleClose }
                 title={ title }
                 aria-labelledby="form-dialog-title"
             >   
             { mode === 'sign' ? <Sign /> : <Register /> }
-            </Modal>
+            </ModalC>
         </div>
 
     )
