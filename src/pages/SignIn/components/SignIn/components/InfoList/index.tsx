@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography } from '@material-ui/core';
 
-import { useStyles } from '../../../../styles';
+import { useStyles } from '../../../../../styles';
 
 export const InfoList = () => {
     const {leftBlock} = useStyles();

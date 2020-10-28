@@ -6,7 +6,7 @@ import { Typography } from '@material-ui/core';
 
 import { ModalC } from '../../../../../../components/Modal'
 
-import { useStyles } from '../../../../styles';
+import { useStyles } from '../../../../../styles';
 import { Sign } from './Sign';
 import { Register } from './Register';
 

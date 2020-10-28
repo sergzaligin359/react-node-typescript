@@ -20,5 +20,8 @@ export const useStyles = makeStyles((theme) => ({
     rightSideTwitterIcon: {
         fontSize: '50px',
         color: '#1DA1F2'
+    }, 
+    paper: {
+        padding: '15px'
     }
   }));

@@ -1,86 +1,47 @@
 import React from 'react';
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import TextField from '@material-ui/core/TextField';
-import { IconButton } from '@material-ui/core';
 
-import TwitterIcon from '@material-ui/icons/Twitter';
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
-import MailOutlineOutlinedIcon from '@material-ui/icons/MailOutlineOutlined';
-import GridOnOutlinedIcon from '@material-ui/icons/GridOnOutlined';
-import LabelOutlinedIcon from '@material-ui/icons/LabelOutlined';
-import FormatAlignJustifyOutlinedIcon from '@material-ui/icons/FormatAlignJustifyOutlined';
-import PermIdentityOutlinedIcon from '@material-ui/icons/PermIdentityOutlined';
-import GroupWorkOutlinedIcon from '@material-ui/icons/GroupWorkOutlined';
+
+
+
+import Paper from '@material-ui/core/Paper';
+
+
+import { useStyles } from './../styles';
+import { Tweet } from './components';
+import { Sidebar } from './components/Sidebar/index';
+import { SideSearch } from './components/SideSearch/index';
+import { NewTweet } from './components/NewTweet/index';
 
 export const HomePage: React.FC = (): React.ReactElement => {
+    const { paper } = useStyles();
+
     return (
         <Container maxWidth="lg">
-            <Grid container >
+            <Grid container spacing={3}>
                 <Grid item xs={1}>
-                    <List>
-                        <ListItem>
-                            <IconButton>
-                                <TwitterIcon />
-                            </IconButton>
-                        </ListItem>
-                        <ListItem>
-                            <IconButton>
-                                <HomeOutlinedIcon />
-                            </IconButton>
-                        </ListItem>
-                        <ListItem>
-                            <IconButton>
-                                <GridOnOutlinedIcon />
-                            </IconButton>
-                        </ListItem>
-                        <ListItem>
-                            <IconButton>
-                                <NotificationsOutlinedIcon />
-                            </IconButton>
-                        </ListItem>
-                        <ListItem>
-                            <IconButton>
-                                <MailOutlineOutlinedIcon />
-                            </IconButton>
-                        </ListItem>
-                        <ListItem>
-                            <IconButton>
-                                <LabelOutlinedIcon />
-                            </IconButton>
-                        </ListItem>
-                        <ListItem>
-                            <IconButton>
-                                <NotificationsOutlinedIcon />
-                            </IconButton>
-                        </ListItem>
-                        <ListItem>
-                            <IconButton>
-                                <FormatAlignJustifyOutlinedIcon />
-                            </IconButton>
-                        </ListItem>
-                        <ListItem>
-                            <IconButton>
-                                <PermIdentityOutlinedIcon />
-                            </IconButton>
-                        </ListItem>
-                        <ListItem>
-                            <IconButton>
-                                <GroupWorkOutlinedIcon />
-                            </IconButton>
-                        </ListItem>
-                    </List>
+                    <Sidebar />
                 </Grid>
-                <Grid item xs={7}>2</Grid>
-                <Grid item xs={4}>
-                <TextField
-                    
-                    variant="outlined"
-                    id="mui-theme-provider-outlined-input"
-                />
+                <Grid item xs={7}>
+                    <Paper className={paper} elevation={2}>
+                        <Typography variant="h6">Главная</Typography>
+                    </Paper>
+                    <br />
+                    <NewTweet />
+                    <br />
+                    <Tweet 
+                        text={ 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.' } 
+                        user={ { 
+                            fullname: 'Zaligin', 
+                            username: 'Sergey', 
+                            avatar: "https://images.unsplash.com/photo-1603745708381-afa35bb85db2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" 
+                        } } 
+                    />
+                    <br />
+                </Grid>
+                <Grid item xs={4} >
+                    <SideSearch />
                 </Grid>
             </Grid>
         </Container>
