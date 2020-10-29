@@ -1,18 +1,11 @@
 import React from 'react';
 import { Container, Grid, Typography } from '@material-ui/core';
-
-
-
-
-
 import Paper from '@material-ui/core/Paper';
 
-
 import { useStyles } from './../styles';
-import { Tweet } from './components';
-import { Sidebar } from './components/Sidebar/index';
-import { SideSearch } from './components/SideSearch/index';
-import { NewTweet } from './components/NewTweet/index';
+
+import { Tweet, Sidebar, SideSearch, NewTweet, ActualTheme, WhoRead } from './components';
+
 
 export const HomePage: React.FC = (): React.ReactElement => {
     const { paper } = useStyles();
@@ -20,10 +13,10 @@ export const HomePage: React.FC = (): React.ReactElement => {
     return (
         <Container maxWidth="lg">
             <Grid container spacing={3}>
-                <Grid item xs={1}>
+                <Grid item xs={1} lg={3}>
                     <Sidebar />
                 </Grid>
-                <Grid item xs={7}>
+                <Grid item xs={7}  lg={6}>
                     <Paper className={paper} elevation={2}>
                         <Typography variant="h6">Главная</Typography>
                     </Paper>
@@ -40,8 +33,13 @@ export const HomePage: React.FC = (): React.ReactElement => {
                     />
                     <br />
                 </Grid>
-                <Grid item xs={4} >
+                <Grid item xs={4}  lg={3}>
                     <SideSearch />
+                    <br />
+                    <ActualTheme />
+                    <br />
+                    <WhoRead />
+                    <br />
                 </Grid>
             </Grid>
         </Container>

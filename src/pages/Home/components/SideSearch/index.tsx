@@ -9,6 +9,7 @@ export const SideSearch: React.FC = (): React.ReactElement => {
     return (
         <Paper className={paper}>
             <TextField
+                label="Поиск по твиттеру"
                 variant="outlined"
                 id="mui-theme-provider-outlined-input"
             />

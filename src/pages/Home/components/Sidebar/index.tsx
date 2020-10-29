@@ -16,7 +16,8 @@ import FormatAlignJustifyOutlinedIcon from '@material-ui/icons/FormatAlignJustif
 import PermIdentityOutlinedIcon from '@material-ui/icons/PermIdentityOutlined';
 import GroupWorkOutlinedIcon from '@material-ui/icons/GroupWorkOutlined';
 import Button from '@material-ui/core/Button';
-
+import Hidden from '@material-ui/core/Hidden';
+import { Typography } from '@material-ui/core';
 
 export const Sidebar: React.FC = (): React.ReactElement => {
 
@@ -31,6 +32,7 @@ export const Sidebar: React.FC = (): React.ReactElement => {
                 <ListItem>
                     <IconButton>
                         <HomeOutlinedIcon />
+                        <Hidden xsDown><Typography variant="h6">Главная</Typography></Hidden>
                     </IconButton>
                 </ListItem>
                 <ListItem>
